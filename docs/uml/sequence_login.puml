@@ -1,0 +1,12 @@
+@startuml sequence_login
+actor User
+participant Browser
+participant Flask
+participant DB
+
+User -> Browser : Isi username & password
+Browser -> Flask : POST /login
+Flask -> DB : Validasi user & password
+DB --> Flask : OK
+Flask -> Browser : Redirect ke /market
+@enduml

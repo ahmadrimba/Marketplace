@@ -1,0 +1,12 @@
+@startuml sequence_create_item
+actor User
+participant Browser
+participant Flask
+participant DB
+
+User -> Browser : Isi form barang/jasa
+Browser -> Flask : POST /market
+Flask -> DB : Simpan item ke database
+DB --> Flask : OK
+Flask -> Browser : Redirect ke /market
+@enduml
